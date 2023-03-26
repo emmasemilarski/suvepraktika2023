@@ -1,0 +1,29 @@
+<div *ngIf="(checkout$ | async) as checkout">
+  <h1>Checkout</h1>
+  <table>
+    <tr>
+      <td>Borrower first name:</td>
+      <td>{{checkout.borrowerFirstName}}</td>
+    </tr>
+    <tr>
+      <td>Borrower last name:</td>
+      <td>{{checkout.borrowerLastName}}</td>
+    </tr>
+    <tr>
+      <td>Borrowed book:</td>
+      <td>{{checkout.borrowedBook.title}}</td>
+    </tr>
+    <tr>
+      <td>Checked out date:</td>
+      <td>{{checkout.checkedOutDate}}</td>
+    </tr>
+    <tr>
+      <td>Due date:</td>
+      <td>{{checkout.dueDate}}</td>
+    </tr>
+    <tr>
+      <td>Returned date:</td>
+      <td>{{checkout.returnedDate}}</td>
+    </tr>
+  </table>
+</div>

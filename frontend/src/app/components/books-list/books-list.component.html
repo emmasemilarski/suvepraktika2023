@@ -3,11 +3,19 @@
     <mat-card-title>Books</mat-card-title>
     <mat-card-content>
       <mat-nav-list *ngIf="(books$ | async) as books">
-        <a mat-list-item *ngFor="let book of books.content" [routerLink]="['/books', book.id]">
-          {{book.title}}
-        </a>
+        <table>
+          <tr>
+            <th class="title">Title</th>
+            <th class="author">Author</th>
+            <th class="status">Status</th>
+          </tr>
+          <tr *ngFor="let book of books.content" [routerLink]="['/books', book.id]">
+            <td class="title">{{book.title}}</td>
+            <td class="author">{{book.author}}</td>
+            <td class="status">{{book.status}}</td>
+          </tr>
+        </table>
       </mat-nav-list>
     </mat-card-content>
   </mat-card>
 </div>
-
