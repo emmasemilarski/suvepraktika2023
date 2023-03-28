@@ -1,5 +1,6 @@
 package com.cgi.library.controller;
 
+import com.cgi.library.entity.Book;
 import com.cgi.library.model.BookDTO;
 import com.cgi.library.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +37,10 @@ public class BookController {
     public ResponseEntity<String> deleteBook(@RequestParam(value = "bookId") UUID bookId) {
         bookService.deleteBook(bookId);
         return ResponseEntity.ok("");
+    }
+
+    @PutMapping(value = "updateBook")
+    public ResponseEntity<String> updateBook(@RequestBody BookDTO book) {
+        return ResponseEntity.ok(String.valueOf(bookService.updateBook(book)));
     }
 }

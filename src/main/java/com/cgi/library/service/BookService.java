@@ -36,4 +36,9 @@ public class BookService {
     public void deleteBook(UUID bookId) {
         bookRepository.deleteById(bookId);
     }
+
+    public UUID updateBook(BookDTO bookDTO) {
+        ModelMapper modelMapper = ModelMapperFactory.getMapper();
+        return bookRepository.update(modelMapper.map(bookDTO, Book.class)).getId();
+    }
 }

@@ -33,5 +33,9 @@
       <td>Comment:</td>
       <td>{{book.comment}}</td>
     </tr>
+    <tr>
+      <button (click) = "checkoutBook(book)" class = "btn btn-danger" style="margin-left: 10px"> Checkout</button>
+      <button (click) = "deleteBook(book)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+    </tr>
   </table>
 </div>
