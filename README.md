@@ -1,7 +1,15 @@
-# Test assignment
+# CGI Test assignment
 
-Welcome to CGI test assignment!
-This is the project template which contains Angular front-end and Spring Boot back-end
+This project contains Angular front-end and Spring Boot back-end. Since I don't have much experience with Angular nor Spring Boot, it took a lot of time to complete even just a few of the development tasks. I struggled with implementing the return and checking out methods, hence they are not in the final solution. Despite everything the assignement was interesting and challenging enough that I enjoyed working on it. :)
+
+## Completed tasks
+
+* Using backend api endpoint /getBooks, implemented table of books view
+* Using backend api endpoint /getCheckouts, also implemented the checkouts view.
+* Implemented individual book and checkout view, supported basic CRUD operations.
+* Implemented a search bar for searching books by title.
+* Implemented a search bar for searching books by status.
+* Added a modal confirmation dialogue when deleting a book.
 
 ## Setting up Spring Boot application.
 
