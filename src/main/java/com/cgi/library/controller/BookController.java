@@ -39,8 +39,8 @@ public class BookController {
         return ResponseEntity.ok("");
     }
 
-    @PutMapping(value = "updateBook")
+    /*@PutMapping(value = "updateBook")
     public ResponseEntity<String> updateBook(@RequestBody BookDTO book) {
         return ResponseEntity.ok(String.valueOf(bookService.updateBook(book)));
-    }
+    }*/
 }

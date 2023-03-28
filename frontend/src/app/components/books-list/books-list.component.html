@@ -1,4 +1,5 @@
 <div class="container mat-elevation-z4">
+  <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
   <mat-card>
     <mat-card-title>Books</mat-card-title>
     <mat-card-content>
@@ -9,10 +10,13 @@
             <th class="author">Author</th>
             <th class="status">Status</th>
           </tr>
+          <!-- searchText === '' || book.name.toLowerCase().includes(searchText) -->
           <tr *ngFor="let book of books.content" [routerLink]="['/books', book.id]">
-            <td class="title">{{book.title}}</td>
-            <td class="author">{{book.author}}</td>
-            <td class="status">{{book.status}}</td>
+            <ng-container *ngIf="searchText === '' || book.title.toLowerCase().includes(searchText)">
+              <td class="title">{{book.title}}</td>
+              <td class="author">{{book.author}}</td>
+              <td class="status">{{book.status}}</td>
+            </ng-container>
           </tr>
         </table>
       </mat-nav-list>

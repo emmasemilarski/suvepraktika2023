@@ -18,8 +18,9 @@ export class CheckoutsListComponent implements OnInit {
   ) {
   }
 
-  ngOnInit(): void {
+  ngOnInit(): Observable<Page<Checkout>> {
     this.checkouts$ = this.checkoutService.getCheckouts({});
+    return this.checkouts$;
   }
 
 }

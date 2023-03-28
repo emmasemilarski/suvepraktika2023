@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { BookService } from '../../services/book.service';
 import { Observable } from 'rxjs';
 import { Page } from '../../models/page';
@@ -18,9 +18,17 @@ export class BooksListComponent implements OnInit {
   ) {
   }
 
-  ngOnInit(): void {
-    // TODO this observable should emit books taking into consideration pagination, sorting and filtering options.
+  ngOnInit(): Observable<Page<Book>> {
     this.books$ = this.bookService.getBooks({});
+    return this.books$;
+  }
+
+  // Search bar was done with this tutorial: https://www.youtube.com/watch?v=vraUdaw5oes
+  searchText: string = "";
+
+  onSearchTextEntered(searchValue: string) {
+    this.searchText = searchValue;
+    console.log(this.searchText);
   }
 
 }
