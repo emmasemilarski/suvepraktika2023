@@ -10,12 +10,11 @@
             <th class="author">Author</th>
             <th class="status">Status</th>
           </tr>
-          <!-- searchText === '' || book.name.toLowerCase().includes(searchText) -->
           <tr *ngFor="let book of books.content" [routerLink]="['/books', book.id]">
             <ng-container *ngIf="searchText === '' || book.title.toLowerCase().includes(searchText)">
-              <td class="title">{{book.title}}</td>
-              <td class="author">{{book.author}}</td>
-              <td class="status">{{book.status}}</td>
+                <td class="title">{{book.title}}</td>
+                <td class="author">{{book.author}}</td>
+                <td class="status">{{book.status}}</td>
             </ng-container>
           </tr>
         </table>

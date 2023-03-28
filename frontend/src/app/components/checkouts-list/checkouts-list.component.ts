@@ -23,4 +23,12 @@ export class CheckoutsListComponent implements OnInit {
     return this.checkouts$;
   }
 
+  // Search bar was done with this tutorial: https://www.youtube.com/watch?v=vraUdaw5oes
+  searchText: string = "";
+
+  onSearchTextEntered(searchValue: string) {
+    this.searchText = searchValue;
+    console.log(this.searchText);
+  }
+
 }

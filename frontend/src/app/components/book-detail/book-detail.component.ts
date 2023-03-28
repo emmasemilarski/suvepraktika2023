@@ -36,7 +36,6 @@ export class BookDetailComponent implements OnInit {
 
   checkoutBook(book: Book): void {
     if (book.status == "AVAILABLE") {
-      // do semething to check out the book
     }
   }
 
